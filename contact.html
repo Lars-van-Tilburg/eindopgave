@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/frontend/eindopgave/css/style.css">
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img src="/frontend/eindopgave/foto/logo.webp" alt="deze logo">
+        </a>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="producten.html">Uitstapjes</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+
+      <form class="myForm">
+
+          <div class="column">
+
+            <div class="rij1">
+             <div class="input-group">
+                <label for="voornaam">Voornaam </label>
+                <input id="voornaam">
+              </div>
+
+              <div class="input-group">
+                <label for="voornaam">Achternaam </label>
+                <input id="achternaam">
+              </div>
+            </div>
+
+            <div class="rij2">
+              <div class="input-group">
+                <label for="voornaam">Tussenvoegsel </label>
+                <input id="tussenvoegsel">
+              </div>
+
+              <div class="input-group">
+                <label for="geboortedatum">Geboortedatum</label>
+                <input type="date" id="geboortedatum">
+               </div>
+               </div>
+
+
+                <div class="rij3">
+                   <div class="input-group">
+                      <label for="onderwerp">Onderwerp</label>
+                        <select id="onderwerp">
+                         <option value="" selected="selected">kies hier</option>
+                          <option value="probleem" >Probleem</option>
+                            <option value="klacht" >Klacht</option>
+                             <option value="opmerking" >Opmerking</option>
+                      </select>
+                  </div>
+                </div>
+
+          <div class="rij3">
+            <div class="input-group">
+            <label for="message">Message:</label><br>
+            <textarea name="message" id="message" cols="30" rows="4"></textarea>
+            </div>
+            </div>
+
+        
+          <div class="rij4">
+            <fieldset class="nieuwsbrief">
+              <legend>Wilt u inschrijven voor de nieuwsbrief</legend>
+              <label> <input type="radio" id="ja" value="ja"> Ja </label>
+              <label> <input type="radio" id="nee" value="nee"> Nee </label>
+            </fieldset>
+      
+            <fieldset class="robot">
+              <legend>Bent u een robot</legend>
+              <label> <input type="checkbox" id="robot" value="robot">Ik ben geen robot </label>
+            </fieldset>
+          </div>
+
+          <ul class="header-links">
+            <button type="submit" value="Stuur">stuur</button>
+            <button type="reset" value="reset">reset</button>
+        </ul>
+        </div>
+
+     </form>
+
+
+                <footer><section class="section1"><p>privacy policy</p> <p>terms & conditions</p> <p>cookie policy</p> <p>contact</p></section></footer>
+</body>
+
+
+</html>

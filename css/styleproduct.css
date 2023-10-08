@@ -1,0 +1,244 @@
+  
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1vw;
+      border-radius: 15px;
+    }
+  
+    .logo {
+      display: inline-block;
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    
+    .nav-item a {
+      display: inline-block;
+      padding: 15px 15px;
+      text-decoration: none;
+      color: white;
+    }
+    
+    .nav-item:hover {
+      color: black;
+      background-color: white;
+      border-radius: 15px;
+    }
+    
+    .nav-item:hover a {
+      color: black;
+    }
+    
+    .logo img {
+      width: 10vw;
+      vertical-align: middle;
+    }
+  
+  body{
+      background-image:url(/frontend/eindopgave/foto/background.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+
+header {
+    margin-top: 5vw;
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    text-align: center;
+    border-radius: 15px;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+.producten .producten-content {
+  position: relative;
+  text-align: center;
+  background-color: white;
+  border-radius: 15px;
+  padding-bottom: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.hover-1 {
+  --c: black; /* the color */
+  --b: .1em;    /* border length*/
+  --d: 20px;    /* the cube depth */
+  
+  --_s: calc(var(--d) + var(--b));
+  
+  color: var(--c);
+  border: solid #0000;
+  border-width: var(--b) var(--b) var(--_s) var(--_s);
+  background:
+    conic-gradient(at left var(--d)  bottom var(--d),
+      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+    conic-gradient(at left var(--_s) bottom var(--_s),
+      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+  transform: translate(calc(var(--d)/-1),var(--d));
+  clip-path: 
+    polygon(
+     var(--d) 0%, 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)),
+     100% calc(100% - var(--d)),
+     var(--d) calc(100% - var(--d))
+    );
+  transition: 0.5s;
+}
+
+.hover-1:hover {
+  transform: translate(0,0);
+  clip-path: 
+    polygon(
+     0% var(--d), 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)), 
+     calc(100% - var(--d)) 100%, 
+     0% 100%
+   );
+}
+
+.producten .producten-content .header-content-inner h1 {
+  margin-bottom: 1vw;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.producten .producten-content .header-content-inner p {
+  margin-bottom: 1vw;
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+}
+
+.producten-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.producten-btn a {
+  display: inline-block;
+  padding: 15px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.producten-btn:hover {
+  color: white;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.producten-btn:hover a {
+  color: white;
+}
+
+.producten img {
+  margin-top: 2vw;
+  width: 20vw;
+  vertical-align: middle;
+  border-radius: 5px;
+  --_g: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
+  --m:
+    left   var(--_i,0%) top    var(--_g),
+    bottom var(--_i,0%) left   var(--_g),
+    top    var(--_i,0%) right  var(--_g),
+    right  var(--_i,0%) bottom var(--_g);
+  -webkit-mask: var(--m);
+          mask: var(--m);
+  filter: grayscale();
+  transition: .3s linear;
+  cursor: pointer;
+}
+
+.producten img:hover {
+  --_i: 10%;
+  filter: grayscale(0);
+}
+
+.checked{
+    color: blue;
+}
+
+footer{
+  color: white;
+  opacity: 0,5;
+  text-align: center;
+}
+
+.section1{
+  font-family:Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    display: inline-block;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    text-align: center;
+    border-radius: 15px;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+  .producten{
+    flex-direction: column;
+    display: flex;
+  }
+
+  .producten .producten-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .producten img{
+    display: none;
+  }
+  
+  .fa-star{
+    display: none;
+  }
+
+  .checked{
+    display: none;
+}
+  
+}
