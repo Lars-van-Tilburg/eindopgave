@@ -40,7 +40,7 @@ nav {
   }
 
 body{
-    background-image:url(/frontend/eindopgave/foto/background.webp);
+    background-image:url(./foto/background.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }
