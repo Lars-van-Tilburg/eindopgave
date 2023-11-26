@@ -1,15 +1,12 @@
   
+    
   nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1vw;
-      border-radius: 15px;
     }
-  
-    .logo {
-      display: inline-block;
-    }
+
     
     .nav-links {
       list-style: none;
@@ -17,7 +14,7 @@
     }
     
     .nav-item a {
-      display: inline-block;
+      display: flex;
       padding: 15px 15px;
       text-decoration: none;
       color: white;
@@ -45,89 +42,149 @@
   }
 
 
-header {
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
     margin-top: 5vw;
-    display: flex;
-    align-items: center;
+
+    align-items: stretch;
     min-height: auto;
     text-align: center;
     border-radius: 15px;
-    justify-content: space-between;
     gap: 2vw;
 }
 
+.producten{
+
+  justify-content: center;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .producten .producten-content {
+  justify-content: center;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
   position: relative;
   text-align: center;
   background-color: white;
   border-radius: 15px;
-  padding-bottom: 1vw;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  padding-top: 5vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 1vw; ;
+  flex: 1 1 0;
 }
 
-.hover-1 {
-  --c: black; /* the color */
-  --b: .1em;    /* border length*/
-  --d: 20px;    /* the cube depth */
+
+@media (hover: hover) {
+  /* css die alleen werkt als er een muispointer is */
+  .hover-1 {
+    --c: black; /* de kleur */
+    --b: .1em;    /* lengte*/
+    --d: 20px;    /* diepte */
+    
+    --_s: calc(var(--d) + var(--b));
+    
+    color: var(--c);
+    border: solid #0000;
+    border-width: var(--b) var(--b) var(--_s) var(--_s);
+    background:
+      conic-gradient(at left var(--d)  bottom var(--d),
+        #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+      conic-gradient(at left var(--_s) bottom var(--_s),
+        #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+    transform: translate(calc(var(--d)/-1),var(--d));
+    /* locatie van de hover*/
+    clip-path: 
+      polygon(
+       var(--d) 0%, 
+       var(--d) 0%, 
+       100% 0%, 
+       100% calc(100% - var(--d)),
+       100% calc(100% - var(--d)),
+       var(--d) calc(100% - var(--d))
+      );
+    transition: 0.5s;
+  }
   
-  --_s: calc(var(--d) + var(--b));
+  .hover-1:hover {
+    transform: translate(0,0);
+    clip-path: 
+      polygon(
+       0% var(--d), 
+       var(--d) 0%, 
+       100% 0%, 
+       100% calc(100% - var(--d)), 
+       calc(100% - var(--d)) 100%, 
+       0% 100%
+     );
+  }
+  /*de locatie van de foto delen als je er over hovert word het 1 foto*/
+
+  .producten img {
+    margin-top: 2vw;
+    width: 20vw;
+    vertical-align: middle;
+    border-radius: 5px;
+    --_g: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
+    --m:
+      left   var(--_i,0%) top    var(--_g),
+      bottom var(--_i,0%) left   var(--_g),
+      top    var(--_i,0%) right  var(--_g),
+      right  var(--_i,0%) bottom var(--_g);
+    -webkit-mask: var(--m);
+            mask: var(--m);
+    filter: grayscale();
+    transition: .3s linear;
+    cursor: pointer;
+  }
   
-  color: var(--c);
-  border: solid #0000;
-  border-width: var(--b) var(--b) var(--_s) var(--_s);
-  background:
-    conic-gradient(at left var(--d)  bottom var(--d),
-      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
-    conic-gradient(at left var(--_s) bottom var(--_s),
-      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
-  transform: translate(calc(var(--d)/-1),var(--d));
-  clip-path: 
-    polygon(
-     var(--d) 0%, 
-     var(--d) 0%, 
-     100% 0%, 
-     100% calc(100% - var(--d)),
-     100% calc(100% - var(--d)),
-     var(--d) calc(100% - var(--d))
-    );
-  transition: 0.5s;
+  .producten img:hover {
+    --_i: 10%;
+    filter: grayscale(0);
+  }
 }
 
-.hover-1:hover {
-  transform: translate(0,0);
-  clip-path: 
-    polygon(
-     0% var(--d), 
-     var(--d) 0%, 
-     100% 0%, 
-     100% calc(100% - var(--d)), 
-     calc(100% - var(--d)) 100%, 
-     0% 100%
-   );
-}
 
-.producten .producten-content .header-content-inner h1 {
+
+.producten .producten-content .main-content-inner h1 {
   margin-bottom: 1vw;
   font-size: 50px;
   font-weight: 300;
 }
 
-.producten .producten-content .header-content-inner p {
+.producten .producten-content .main-content-inner p {
   margin-bottom: 1vw;
   font-size: 18px;
   font-weight: 300;
   color: black;
 }
 
+ul{
+  padding: 0;
+}
+
 .producten-links {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.producten-btn{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .producten-btn a {
-  display: inline-block;
+  display: flex;
   padding: 15px 15px;
   text-decoration: none;
   color: black;
@@ -147,27 +204,10 @@ header {
   margin-top: 2vw;
   width: 20vw;
   vertical-align: middle;
-  border-radius: 5px;
-  --_g: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
-  --m:
-    left   var(--_i,0%) top    var(--_g),
-    bottom var(--_i,0%) left   var(--_g),
-    top    var(--_i,0%) right  var(--_g),
-    right  var(--_i,0%) bottom var(--_g);
-  -webkit-mask: var(--m);
-          mask: var(--m);
-  filter: grayscale();
-  transition: .3s linear;
-  cursor: pointer;
-}
-
-.producten img:hover {
-  --_i: 10%;
-  filter: grayscale(0);
 }
 
 .checked{
-    color: blue;
+  color: gold;
 }
 
 footer{
@@ -188,19 +228,23 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .logo {
-    display: inline-block;
+    justify-content: center;
   }
   
   .nav-links {
     list-style: none;
     display: flex;
     flex-direction: column;
+    
   }
 
-  header {
+    
+  .logo img {
+    width: 40vw;
+    vertical-align: middle;
+  }
+
+ main {
     margin-top: 5vw;
     display: flex;
     flex-direction: column;
@@ -211,6 +255,8 @@ footer{
     justify-content: space-between;
     gap: 2vw;
 }
+
+
 
   .producten{
     flex-direction: column;
@@ -224,21 +270,31 @@ footer{
     text-align: center;
     background-color: white;
     border-radius: 15px;
-    padding-bottom: 1vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
   }
 
   .producten img{
-    display: none;
-  }
-  
-  .fa-star{
-    display: none;
+    margin-top: 2vw;
+    width: 40vw;
+    vertical-align: middle;
+    border-radius: 5px;
   }
 
-  .checked{
-    display: none;
-}
+  .ster{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  footer{
+    color: white;
+    opacity: 0,5;
+    text-align: center;
+  }
   
+  .section1{
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
 }
