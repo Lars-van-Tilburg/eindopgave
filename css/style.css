@@ -4,12 +4,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1vw;
-    border-radius: 15px;
   }
   
-
   .logo {
-    display: inline-block;
+    display: flex;
   }
   
   .nav-links {
@@ -18,7 +16,7 @@ nav {
   }
   
   .nav-item a {
-    display: inline-block;
+    display: flex;
     padding: 15px 15px;
     text-decoration: none;
     color: white;
@@ -45,7 +43,7 @@ body{
     background-size: cover;
 }
 
-  header {
+   header {
     margin-top: 5vw;
     display: flex;
     align-items: center;
@@ -56,12 +54,14 @@ body{
     border-radius: 15px;
     margin-left: 3vw;
     margin-right: 3vw;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2vw;
 }
 
 header .header-content {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   text-align: center;
 }
 
@@ -79,14 +79,26 @@ header .header-content .header-content-inner p {
   color: black;
 }
 
+ul{
+  padding: 0;
+}
+
 .header-links {
   list-style: none;
   display: flex;
   justify-content: center;
+  align-content: center;
+}
+
+.header-btn {
+  display: flex;
+  justify-content: center;
+ align-content: center;
 }
 
 .header-btn a {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 15px 15px;
   text-decoration: none;
   color: black;
@@ -102,77 +114,78 @@ header .header-content .header-content-inner p {
   color: white;
 }
 
-.myForm {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-
-
-.rij1{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 2vw;
-}
-
-.rij2{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 2vw;
-}
-
-.rij3{
-  display: flex;
-  flex-direction: row;
-  gap: 2vw;
-}
-
-.rij4{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2vw;
-}
-
 .column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1em;
-  background-color: white;
   border-radius: 15px;
-}
-
-.input-group {
-   display: flex;
-}
-
-.input-group > label {
-  margin-right: 1em; 
-  padding: .5em 0;
-}
-
-.myForm input,
-.myForm select {
-  padding: .5em;
-  margin-bottom: 1em;
-}
-
-.myForm button {
- padding: 2em , 3em; 
   background-color: white;
-  color: black;
-  border: 0;
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.myForm fieldset {
-   border: 0; 
+
+.myform {
+  max-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  justify-content: space-evenly;
 }
 
-.nieuwsbrief > label,
-.robot > label {
-  display: block;
+.formfield {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.formfieldrow {
+  display: flex;
+
+  flex-direction: column;
+  flex: 1;
+}
+
+input {
+  color: #000000;
+  font-size: 1.05rem;
+  padding: 11px 5px;
+  transition: .3s;
+  border-radius: 0.5rem;
+  border: 2px #b3b9c6 solid;
+}
+
+input:hover {
+  transform: scale(1.05);
+}
+
+select {
+  font-size: 1em;
+  transition: .3s;
+  padding: 11px;
+  border-radius: 0.5rem;
+}
+
+select:hover {
+  transform: scale(1.05);
+}
+
+input, select, option, textarea {
+  text-shadow: none;
+}
+
+.container {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 button{
@@ -203,6 +216,33 @@ footer{
   flex-direction: row;
 }
 
+@media (max-width: 1126px) {
+  .column{
+    max-width: 60vw;
+    display: flex;
+    flex-direction: row;
+    gap: .75rem;
+    justify-content: center;
+  }
+
+  .myform {
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    justify-content: center;
+  }
+  
+  
+  .formfield {
+    display: flex;
+  flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+  }
+}
+
+
 
 @media (max-width: 600px) {
   nav {
@@ -211,8 +251,9 @@ footer{
     align-items: center;
   }
 
-  .logo {
-    display: inline-block;
+  .logo img {
+    width: 40vw;
+    vertical-align: middle;
   }
   
   .nav-links {
@@ -220,33 +261,36 @@ footer{
     display: flex;
     flex-direction: column;
   }
-
-  .myForm {
+  
+  .column{
+    max-width: 60vw;
     display: flex;
-    justify-content: space-evenly;
     flex-direction: row;
+    gap: .75rem;
+    justify-content: center;
   }
-  
-  
-  .rij1{
-    display: flex;
-    flex-direction: column;
 
-  }
-  
-  .rij2{
+  .myform {
+    max-width: 60vw;
     display: flex;
     flex-direction: column;
+    gap: .75rem;
+    justify-content: center;
   }
   
-  .rij3{
+  
+  .formfield {
     display: flex;
-    flex-direction: column;
+  flex-direction: column;
+    gap: 1rem;
+    flex: 1;
   }
   
-  .rij4{
-      display: flex;
-      flex-direction: column;
+  .formfieldrow {
+    display: flex;
+  
+    flex-direction: column;
+    flex: 1;
   }
   
   .column {
