@@ -124,7 +124,6 @@ ul{
 .myform {
   display: flex;
   max-width: 60vw;
-  display: flex;
   flex-direction: column;
   gap: .75rem;
   justify-content: space-evenly;
