@@ -132,6 +132,11 @@ ul{
   border-radius: 15px;
 }
 
+.column .myform h1{
+  display: flex;
+  justify-content: center;
+}
+
 .formfield {
   display: flex;
   gap: 1rem;
