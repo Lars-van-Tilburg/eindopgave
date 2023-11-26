@@ -158,13 +158,13 @@ h2{
 
 .producten .producten-content .main-content-inner h1 {
   margin-bottom: 1vw;
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 300;
 }
 
 .producten .producten-content .main-content-inner p {
   margin-bottom: 1vw;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 300;
   color: black;
 }
